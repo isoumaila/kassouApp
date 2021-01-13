@@ -1,0 +1,7 @@
+{
+  "name": "KassouaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

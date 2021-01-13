@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KassouaApp</string>
+    <string name="title_activity_main">KassouaApp</string>
+    <string name="package_name">com.ibrahimniger.nigerhabay</string>
+    <string name="custom_url_scheme">com.ibrahimniger.nigerhabay</string>
+</resources>
