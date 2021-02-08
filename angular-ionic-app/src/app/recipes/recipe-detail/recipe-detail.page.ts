@@ -11,12 +11,15 @@ import { RecipesService } from '../recipes.service';
 })
 export class RecipeDetailPage implements OnInit {
 loadedRecipe : Recipe;
+localisation = "../assets/icon/google-maps.png";
+defaultShopPhoto = "../assets/pictures/shopDefaultPhoto.png";
   constructor(private activatedRoute: ActivatedRoute,
     private recipesServices: RecipesService,
     private router: Router,
     private alertCrtl : AlertController) { }
 
   ngOnInit() {
+    this.recipesServices.getDataFromJSONFile();
     this.activatedRoute.paramMap.subscribe( 
       paramMap =>  {
         if(!paramMap.has('recipeId')){
@@ -27,6 +30,7 @@ loadedRecipe : Recipe;
       this.loadedRecipe = this.recipesServices.getRecipe(id);
     }
       )
+      
       // To update, run: npm uninstall -g ionic
       //Then run: npm i -g @ionic/cli
   }

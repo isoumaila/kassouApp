@@ -5,4 +5,8 @@ export interface Recipe{
     imageUrl: string;
     ingredients: string[];
     productType: string;
+    phoneNumber: number;
+    shopType: string;
+    market: string;
+    town: string;
 }

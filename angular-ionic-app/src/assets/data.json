@@ -1,0 +1,69 @@
+{
+    "contry": "Niger",
+    "shops": [
+        {
+            "shopName": "Etablissement Uniforme",
+            "shopArticleType": "Pagne pour femme",
+            "shopPhoneNumber": 96419638,
+            "shopHours": "11h  à 18h",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Haro Banda"
+        },
+        {
+            "shopName": "Ali Alhousseini",
+            "shopArticleType": "Pagne pour femme",
+            "shopPhoneNumber": 97829354,
+            "shopHours": "9h  à 18h30 "
+            ,
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Haro Banda"
+        },
+        {
+            "shopName": "Djibril",
+            "shopArticleType": "Chaussure pour femme",
+            "shopPhoneNumber": 89109779,
+            "shopHours": "8h  à 20h00 ",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Haro Banda"
+        },
+        {
+            "shopName": "Ibrahim",
+            "shopArticleType": "Tissu pour homme",
+            "shopPhoneNumber": 84260319,
+            "shopHours": "09h  à 18h",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Haro Banda"
+        },
+        {
+            "shopName": "Boubacar",
+            "shopArticleType": "Tissu pour homme",
+            "shopPhoneNumber": 91062104,
+            "shopHours": "9h  à 19h00 ",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Haro Banda"
+        },
+        {
+            "shopName": "Abdoul Hadi",
+            "shopArticleType": "Lèche pour femme",
+            "shopPhoneNumber": 90244518,
+            "shopHours": "8h  à 19h00 ",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Haro Banda"
+        },
+        {
+            "shopName": "Beby Rampain",
+            "shopArticleType": "Chaussure pour femme",
+            "shopPhoneNumber": 94086513,
+            "shopHours": "9h  à 19h00 ",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Haro Banda"
+        }
+    ]
+}
