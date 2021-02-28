@@ -5,8 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <!-- <ion-list>
     <app-recipes-item *ngFor="let recipe of recipes" [recipeItem]="recipe">  
+
+    </app-recipes-item>
+  </ion-list> -->
+  <ion-list>
+    <app-recipes-item *ngFor="let rJson of recipeJson" [recipeItemJson]="rJson">  
 
     </app-recipes-item>
   </ion-list>

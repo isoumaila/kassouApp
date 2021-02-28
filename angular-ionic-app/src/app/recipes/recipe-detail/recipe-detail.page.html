@@ -1,16 +1,16 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="kassouapp">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/recipes">
 
       </ion-back-button>
     </ion-buttons>
-    <ion-title>{{loadedRecipe.title}}</ion-title>
-    <ion-buttons slot="primary">
+    <ion-title>{{loadedRecipeJson?.shopName}}</ion-title>
+   <!-- <ion-buttons slot="primary">
       <ion-button (click)="onDeleteRecipe()">
         <ion-icon name="trash" slot="icon-only"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons>-->
   </ion-toolbar>
 </ion-header>
 
@@ -18,19 +18,20 @@
   <ion-grid no-padding>
     <ion-row>
       <ion-col no-padding>
-        <ion-img [src]="loadedRecipe.imageUrl"></ion-img>
+        <ion-img [src]="'../'+loadedRecipeJson.shopImageUrl">  </ion-img>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <h1 class="shopDescrition" text-center>{{loadedRecipe.productType}}</h1>
+        
+        <h1 class="shopDescrition" text-center>{{loadedRecipeJson?.shopArticleType}}</h1>
       </ion-col>
     </ion-row>
     <ion-row>
 
       <ion-col>
         <ion-list>
-          <ion-item *ngFor="let ingredient of loadedRecipe.ingredients">
+          <ion-item *ngFor="let ingredient of loadedRecipeJson?.shopingredients">
             {{ingredient}}
           </ion-item>
 
@@ -40,10 +41,10 @@
   </ion-grid>
   <ion-item>
     <ion-avatar slot="start">
-      <ion-img [src]="loadedRecipe.imageUrl"> </ion-img>
+      <ion-img [src]="'../'+loadedRecipeJson.shopImageUrl"> </ion-img>
     </ion-avatar>
     <ion-label> <strong> Contacter la boutique :</strong>
-      <h2 class="phone">{{loadedRecipe.phoneNumber}}</h2>
+      <h2 class="phone">{{loadedRecipeJson?.shopPhoneNumber}}</h2>
     </ion-label>
   </ion-item>
 
@@ -52,7 +53,7 @@
     <ion-thumbnail slot="start">
       <ion-img [src]=localisation> </ion-img>
     </ion-thumbnail>
-    <ion-label><strong>{{loadedRecipe.town}}</strong>, {{loadedRecipe.market}}</ion-label>
+    <ion-label><strong>{{loadedRecipeJson?.shopCity}}</strong>, {{loadedRecipeJson?.shopMarketPlaceName}}</ion-label>
   </ion-item>
 
 

@@ -1,5 +1,5 @@
 
-<ion-list [routerLink] = "['/recipes', recipeItem.id]">
+<!-- <ion-list [routerLink] = "['/home/recipes', recipeItem.id]">
   <ion-item-divider>
     <ion-avatar slot="start">
       <ion-img [src]="recipeItem.imageUrl">  </ion-img>
@@ -9,4 +9,15 @@
     </ion-label>
   </ion-item-divider>
   <ion-item><ion-label>{{recipeItem.town}}, {{recipeItem.market}}</ion-label></ion-item>
+</ion-list> -->
+<ion-list [routerLink] = "['/home/recipes', recipeItemJson?.id]">
+  <ion-item-divider>
+    <ion-avatar slot="start">
+      <ion-img [src]="recipeItemJson?.shopImageUrl">  </ion-img>
+    </ion-avatar>
+    <ion-label>
+      {{recipeItemJson?.shopName}}
+    </ion-label>
+  </ion-item-divider>
+  <ion-item><ion-label>{{recipeItemJson?.shopCity}}, {{recipeItemJson?.shopMarketPlaceName}}</ion-label></ion-item>
 </ion-list>

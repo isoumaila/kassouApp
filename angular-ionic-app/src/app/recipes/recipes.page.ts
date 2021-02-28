@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { title } from 'process';
 import { Recipe } from './recipe.model';
+import { Recipejson } from './recipe.model.json';
 import { RecipesService } from './recipes.service';
 
 @Component({
@@ -11,11 +12,15 @@ import { RecipesService } from './recipes.service';
 export class RecipesPage implements OnInit {
 
   recipes: Recipe[];
+
+  private recipeJson: Recipejson[] = [];
   
   constructor(private recipesServices: RecipesService) { }
 
   ngOnInit() {
-    this.recipes= this.recipesServices.getAllRecipes();
+    //this.recipes= this.recipesServices.getAllRecipes();
+    this.recipeJson = this.recipesServices.getAllRecipesJson(this.recipeJson);
+    //console.log(this.recipeJson);
   }
 
 

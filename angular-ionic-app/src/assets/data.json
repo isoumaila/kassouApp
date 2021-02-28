@@ -2,13 +2,53 @@
     "contry": "Niger",
     "shops": [
         {
+            "shopName": "Boutique de Hassan",
+            "shopArticleType": "cosmetique, bijouterie",
+            "shopPhoneNumber": 98773009,
+            "shopHours": "11h  à 18h",
+            "shopMarketPlaceName": "Harro Banda",
+            "shopContry": "Niamey",
+            "shopCity": "Niamey",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": ["Défrisons", "Crèmes", "Parfums pour homme et femme"],
+            "shopimageUrl": "assets/pictures/boutique_cosmetique.jpg"
+      
+          },
+          {
+            "shopName": "Boutique de Amadou",
+            "shopArticleType": "cosmetique, bijouterie",
+            "shopPhoneNumber": 92366341,
+            "shopHours": "11h  à 18h",
+            "shopMarketPlaceName": "Harro Banda",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": ["Savons de douches", "Chaines complée", "Bracelets"],
+            "shopimageUrl": "assets/pictures/boutique_cosmetique1.jpg"
+          },
+          {
+            "shopName": "Boutique de Hassoumi",
+            "shopArticleType": "cosmetique, bijouterie",
+            "shopPhoneNumber": 99140190,
+            "shopHours": "11h  à 18h",
+            "shopContry": "Niger",
+            "shopCity": "Niamey",
+            "shopMarketPlaceName": "Harro Banda",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": ["Poudre et autres produits pour maquillage", "Bagues pour femme", "Bracelets"],
+            "shopimageUrl": "assets/pictures/boutique_cosmetique2.jpg"
+        },
+        {
             "shopName": "Etablissement Uniforme",
             "shopArticleType": "Pagne pour femme",
             "shopPhoneNumber": 96419638,
             "shopHours": "11h  à 18h",
             "shopContry": "Niger",
             "shopCity": "Niamey",
-            "shopMarketPlaceName": "Haro Banda"
+            "shopMarketPlaceName": "Haro Banda",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
         },
         {
             "shopName": "Ali Alhousseini",
@@ -18,7 +58,11 @@
             ,
             "shopContry": "Niger",
             "shopCity": "Niamey",
-            "shopMarketPlaceName": "Haro Banda"
+            "shopMarketPlaceName": "Haro Banda",
+            
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
         },
         {
             "shopName": "Djibril",
@@ -27,7 +71,10 @@
             "shopHours": "8h  à 20h00 ",
             "shopContry": "Niger",
             "shopCity": "Niamey",
-            "shopMarketPlaceName": "Haro Banda"
+            "shopMarketPlaceName": "Haro Banda",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
         },
         {
             "shopName": "Ibrahim",
@@ -36,7 +83,10 @@
             "shopHours": "09h  à 18h",
             "shopContry": "Niger",
             "shopCity": "Niamey",
-            "shopMarketPlaceName": "Haro Banda"
+            "shopMarketPlaceName": "Haro Banda",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
         },
         {
             "shopName": "Boubacar",
@@ -45,7 +95,10 @@
             "shopHours": "9h  à 19h00 ",
             "shopContry": "Niger",
             "shopCity": "Niamey",
-            "shopMarketPlaceName": "Haro Banda"
+            "shopMarketPlaceName": "Haro Banda",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
         },
         {
             "shopName": "Abdoul Hadi",
@@ -54,7 +107,10 @@
             "shopHours": "8h  à 19h00 ",
             "shopContry": "Niger",
             "shopCity": "Niamey",
-            "shopMarketPlaceName": "Haro Banda"
+            "shopMarketPlaceName": "Haro Banda",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
         },
         {
             "shopName": "Beby Rampain",
@@ -63,7 +119,10 @@
             "shopHours": "9h  à 19h00 ",
             "shopContry": "Niger",
             "shopCity": "Niamey",
-            "shopMarketPlaceName": "Haro Banda"
+            "shopMarketPlaceName": "Haro Banda",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
         }
     ]
 }

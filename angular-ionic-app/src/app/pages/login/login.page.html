@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color='kassouapp'>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="center">
+    <app-logo></app-logo>
+    <h1>Se connecter</h1>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label position='stacked'>Non utilisateur</ion-label>
+      <ion-input type='text'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position='stacked'>Mot de passe</ion-label>
+      <ion-input type='password'></ion-input>
+    </ion-item>
+
+    <ion-item>
+     Je n'ai pas encore un compte ? <a routerLink='/signup'>Créer un compte</a>
+    </ion-item>
+    <ion-button expand="block" shape='round' color='kassouapp' (click)="login()">Connexion</ion-button>
+
+  </ion-list>
+</ion-content>
