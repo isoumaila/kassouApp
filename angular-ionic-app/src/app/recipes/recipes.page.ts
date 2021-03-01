@@ -15,14 +15,30 @@ export class RecipesPage implements OnInit {
 
   private recipeJson: Recipejson[] = [];
   
-  constructor(private recipesServices: RecipesService) { }
+  constructor(private recipesServices: RecipesService) { 
+    this.recipeJson = this.recipesServices.getAllRecipesJson(this.recipeJson);
+  }
 
   ngOnInit() {
     //this.recipes= this.recipesServices.getAllRecipes();
-    this.recipeJson = this.recipesServices.getAllRecipesJson(this.recipeJson);
+   
     //console.log(this.recipeJson);
   }
 
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.recipeJson = [];
+    this.recipeJson = this.recipesServices.getAllRecipesJson(this.recipeJson);
 
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.recipeJson = this.recipeJson.filter((item) => {
+        return (item.shopMarketPlaceName.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
 
 }

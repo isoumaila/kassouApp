@@ -1,6 +1,8 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Niamey : Marché Harobanda !!</ion-title>
+  <ion-toolbar color='kassouapp'>
+    <div class="chercher">
+    <ion-searchbar aria-placeholder="Marché" (ionInput)="getItems($event)"></ion-searchbar>
+  </div>
   </ion-toolbar>
 </ion-header>
 
@@ -10,10 +12,10 @@
 
     </app-recipes-item>
   </ion-list> -->
-  <ion-list>
+
     <app-recipes-item *ngFor="let rJson of recipeJson" [recipeItemJson]="rJson">  
 
     </app-recipes-item>
-  </ion-list>
+
 
 </ion-content>
