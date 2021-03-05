@@ -1,6 +1,23 @@
 .shopDescrition{
-    background-color: cadetblue;
+    background-color:  #42d77d;
 }
 .phone{
     color: rgb(255, 0, 55);
 }
+
+.card-title {
+   // position: absolute;
+   // top: 6%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(61, 240, 16);
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+   // position: absolute;
+   // top: 25%;
+    width: 100%;
+    color: rgb(29, 235, 29);
+  }

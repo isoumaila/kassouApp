@@ -6,7 +6,7 @@
       </ion-back-button>
     </ion-buttons>
     <ion-title>{{loadedRecipeJson?.shopName}}</ion-title>
-   <!-- <ion-buttons slot="primary">
+    <!-- <ion-buttons slot="primary">
       <ion-button (click)="onDeleteRecipe()">
         <ion-icon name="trash" slot="icon-only"></ion-icon>
       </ion-button>
@@ -16,7 +16,13 @@
 
 <ion-content>
   <ion-grid no-padding>
-    <ion-row>
+    <ion-card>
+      <img [src]="'../'+loadedRecipeJson.shopImageUrl" />
+      <div class="card-title">Horaires : {{loadedRecipeJson?.shopHours}}</div>
+      <div class="card-subtitle">{{loadedRecipeJson?.shopArticleType}}</div>
+    </ion-card>
+
+    <!-- <ion-row>
       <ion-col no-padding>
         <ion-img [src]="'../'+loadedRecipeJson.shopImageUrl">  </ion-img>
       </ion-col>
@@ -24,9 +30,9 @@
     <ion-row>
       <ion-col>
         
-        <h1 class="shopDescrition" text-center>{{loadedRecipeJson?.shopArticleType}}</h1>
+        <h1 class="shopDescrition"  text-center>{{loadedRecipeJson?.shopArticleType}}</h1>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
     <ion-row>
 
       <ion-col>
