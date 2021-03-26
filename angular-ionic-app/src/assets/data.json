@@ -123,6 +123,30 @@
             "shopArticleType1": "Articles et produits :",
             "shopingredients": [],
             "shopimageUrl": "assets/pictures/shopDefaultPhoto.jpg"
+        },
+        {
+            "shopName": "MAHAMADOU DINA",
+            "shopArticleType": "Construction",
+            "shopPhoneNumber": 96528811,
+            "shopHours": "9h à 19h",
+            "shopContry": "Niger",
+            "shopCity": "Tahoua",
+            "shopMarketPlaceName": "",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": ["Ciments", "Tuyaux", "Planches", "Peinture", "Martaux", "Cadenas et Serrures"],
+            "shopimageUrl": "assets/pictures/96528811.jpeg"
+        },
+        {
+            "shopName": "ABDOU SALAM IDRISSA",
+            "shopArticleType": "Alimentation générale",
+            "shopPhoneNumber": 97301108,
+            "shopHours": "8h30 à 23h",
+            "shopContry": "Niger",
+            "shopCity": "Tahoua",
+            "shopMarketPlaceName": "Marché Moderne",
+            "shopArticleType1": "Articles et produits :",
+            "shopingredients": [],
+            "shopimageUrl": "assets/pictures/97301108.jpeg"
         }
     ]
 }

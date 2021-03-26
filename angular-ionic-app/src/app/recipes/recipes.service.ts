@@ -3,6 +3,11 @@ import { Recipe } from './recipe.model';
 import data from '../../assets/data.json';
 import { Recipejson } from './recipe.model.json';
 
+// import { Http , Response } from '@angular/http';
+// import { Observable } from 'rxjs/Observable';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/do';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -92,6 +97,26 @@ export class RecipesService {
   }
 
   getDataFromJSONFile( recipeJsonParam: Recipejson[]) {
+    // console.log(data);
+
+   for (var i = 0; i < data.shops.length; i++) {
+      recipeJsonParam.push({
+        id: i,
+        shopName: data.shops[i].shopName,
+        shopImageUrl: data.shops[i].shopimageUrl,
+        shopArticleType: data.shops[i].shopArticleType,
+        shopPhoneNumber: data.shops[i].shopPhoneNumber,
+        shopHours: data.shops[i].shopHours,
+        shopContry: data.shops[i].shopContry,
+        shopCity: data.shops[i].shopCity,
+        shopMarketPlaceName: data.shops[i].shopMarketPlaceName,
+        shopArticleType1: data.shops[i].shopArticleType1,
+        shopingredients: data.shops[i].shopingredients
+      });
+    }
+   return recipeJsonParam;
+  }
+  getDataFromJSONFileObeservable( recipeJsonParam: Recipejson[]) {
     // console.log(data);
 
    for (var i = 0; i < data.shops.length; i++) {

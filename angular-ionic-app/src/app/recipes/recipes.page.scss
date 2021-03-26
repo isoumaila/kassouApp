@@ -16,4 +16,15 @@ ion-title{
      }
  }
 
+ ion-searchbar::part(placeholder) {
+    color: #b94c0d;
+    opacity: 1;
+  }
+
+
+  ion-searchbar::part(text) {
+    color: #545ca7;
+  }
+
+
  
