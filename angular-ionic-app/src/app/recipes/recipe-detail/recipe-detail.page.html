@@ -1,28 +1,37 @@
 <ion-header>
-  <ion-toolbar color="kassouapp">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/recipes">
+    <ion-toolbar color="kassouapp">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/recipes">
 
-      </ion-back-button>
-    </ion-buttons>
-    <ion-title>{{loadedRecipeJson?.shopName}}</ion-title>
-    <!-- <ion-buttons slot="primary">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title>{{loadedRecipeJson?.shopName}}</ion-title>
+        <!-- <ion-buttons slot="primary">
       <ion-button (click)="onDeleteRecipe()">
         <ion-icon name="trash" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>-->
-  </ion-toolbar>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid no-padding>
-    <ion-card>
-      <img [src]="'../'+loadedRecipeJson.shopImageUrl" />
-      <div class="card-title">Horaires : {{loadedRecipeJson?.shopHours}}</div>
-      <div class="card-subtitle">{{loadedRecipeJson?.shopArticleType}}</div>
-    </ion-card>
+    <ion-grid no-padding>
+        <ion-card>
+            <!--
+            <ng-template *ngIf="loadedRecipeJson?.shopImageUrl; else nonImg">
+                <img [src]="'../'+loadedRecipeJson?.shopImageUrl" />
+            </ng-template>
+loading
+            <ng-template #nonImg>
+                <img [src]="'../assets/pictures/shopDefaultPhoto.jpg'" />
+            </ng-template>
+-->
+            <img *ngIf="loading && loadedRecipeJson?.shopImageUrl" [src]="'../'+loadedRecipeJson?.shopImageUrl" />
+            <div class="card-title">Horaires : {{loadedRecipeJson?.shopHours}}</div>
+            <div class="card-subtitle">{{loadedRecipeJson?.shopArticleType}}</div>
+        </ion-card>
 
-    <!-- <ion-row>
+        <!-- <ion-row>
       <ion-col no-padding>
         <ion-img [src]="'../'+loadedRecipeJson.shopImageUrl">  </ion-img>
       </ion-col>
@@ -33,34 +42,44 @@
         <h1 class="shopDescrition"  text-center>{{loadedRecipeJson?.shopArticleType}}</h1>
       </ion-col>
     </ion-row> -->
-    <ion-row>
+        <ion-row>
 
-      <ion-col>
-        <ion-list>
-          <ion-item *ngFor="let ingredient of loadedRecipeJson?.shopingredients">
-            {{ingredient}}
-          </ion-item>
+            <ion-col>
+                <ion-list>
+                    <ion-item *ngFor="let ingredient of loadedRecipeJson?.shopingredients">
+                        {{ingredient}}
+                    </ion-item>
 
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-item>
-    <ion-avatar slot="start">
-      <ion-img [src]="'../'+loadedRecipeJson.shopImageUrl"> </ion-img>
-    </ion-avatar>
-    <ion-label> <strong> Contacter la boutique :</strong>
-      <h2 class="phone">{{loadedRecipeJson?.shopPhoneNumber}}</h2>
-    </ion-label>
-  </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-item>
+        <ion-avatar slot="start">
+            <!--
+            <ng-template *ngIf="loadedRecipeJson?.shopImageUrl; else nonImg2">
+                <ion-img [src]="'../'+loadedRecipeJson?.shopImageUrl"> </ion-img>
+            </ng-template>
+            <ng-template #nonImg2>
+                <ion-img [src]="'../assets/pictures/shopDefaultPhoto.jpg'"> </ion-img>
+            </ng-template>
+            loading
+            -->
+
+            <ion-img *ngIf="loading && loadedRecipeJson?.shopImageUrl" [src]="'../'+loadedRecipeJson?.shopImageUrl"> </ion-img>
+        </ion-avatar>
+        <ion-label> <strong> Contacter la boutique :</strong>
+            <h2 class="phone">{{loadedRecipeJson?.shopPhoneNumber}}</h2>
+        </ion-label>
+    </ion-item>
 
 
-  <ion-item>
-    <ion-thumbnail slot="start">
-      <ion-img [src]=localisation> </ion-img>
-    </ion-thumbnail>
-    <ion-label><strong>{{loadedRecipeJson?.shopCity}}</strong>, {{loadedRecipeJson?.shopMarketPlaceName}}</ion-label>
-  </ion-item>
+    <ion-item>
+        <ion-thumbnail slot="start">
+            <ion-img [src]=localisation> </ion-img>
+        </ion-thumbnail>
+        <ion-label><strong>{{loadedRecipeJson?.shopCity}}</strong>, {{loadedRecipeJson?.shopMarketPlaceName}}</ion-label>
+    </ion-item>
 
 
 </ion-content>

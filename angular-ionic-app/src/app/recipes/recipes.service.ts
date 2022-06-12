@@ -3,6 +3,10 @@ import { Recipe } from './recipe.model';
 import data from '../../assets/data.json';
 import { Recipejson } from './recipe.model.json';
 
+import { HttpClient } from '@angular/common/http';
+import { RecipeClass } from './recipeClass';
+import { Observable } from 'rxjs';
+
 // import { Http , Response } from '@angular/http';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/map';
@@ -12,6 +16,14 @@ import { Recipejson } from './recipe.model.json';
   providedIn: 'root'
 })
 export class RecipesService {
+ /**
+    * @name _HOST 
+    * @type {String} 
+    * @private
+    * @description The network IP Address and port number that the
+                    node application is running on
+   */
+  private _HOST : string 			=	"http://localhost:777/k-api/v1/";
 
   private recipeJson: Recipejson[] = [
 
@@ -52,7 +64,13 @@ export class RecipesService {
       town: 'Niamey'
     }
   ]
-  constructor() { }
+
+  /*constructor() {
+    console.log("SHOPS SERVICES CONTRUCTORS");
+   }*/
+  constructor( private _HTTP          : HttpClient) {
+    console.log("SHOPS SERVICES CONTRUCTORS");
+   }
 
 
   getAllRecipes() {
@@ -60,6 +78,10 @@ export class RecipesService {
   }
   getAllRecipesJson( recipeJsonParam: Recipejson[]) {
     return [...this.getDataFromJSONFile(recipeJsonParam)];
+  }
+
+  getAllRecipesFromAPI( recipeJsonParam: Recipejson[]) {
+    return this.getDataFromKasuwaAPI(recipeJsonParam);
   }
 
   getRecipe(id: string) {
@@ -116,6 +138,44 @@ export class RecipesService {
     }
    return recipeJsonParam;
   }
+
+
+ 
+  /**
+   * La liste des boutiques
+   * 
+   * @param recipeJsonParam : model de données
+   * @returns : données issues de la base mongo db
+   */
+  getDataFromKasuwaAPI( recipeJsonParam: Recipejson[]) {
+    this._HTTP
+      .get(this._HOST + "shop")
+      
+      .subscribe((data : any) =>
+      {
+         // If the request was successful notify the user
+        for (var i = 0; i < data.length; i++) {
+          recipeJsonParam.push({
+            id:  data[i]._id,
+            shopName: data[i].shopName,
+            shopImageUrl: data[i].shopimageUrl,
+            shopArticleType: data[i].shopArticleType,
+            shopPhoneNumber: data[i].shopPhoneNumber,
+            shopHours: data[i].shopHours,
+            shopContry: data[i].shopContry,
+            shopCity: data[i].shopCity,
+            shopMarketPlaceName: data[i].shopMarketPlaceName,
+            shopArticleType1: data[i].shopArticleType1,
+            shopingredients: data[i].shopingredients
+          });
+        }  
+      },
+      (error : any) =>
+      {
+         console.dir("ERROR dans la methode (getDataFromKasuwaAPI): " +error);
+      });
+   return recipeJsonParam;
+  }
   getDataFromJSONFileObeservable( recipeJsonParam: Recipejson[]) {
     // console.log(data);
 
@@ -137,6 +197,17 @@ export class RecipesService {
    return recipeJsonParam;
   }
 
-
-
+  /**
+   * 
+   * @param id 
+   * @returns 
+   */
+  getOneBoutigue(id: string): Observable<any> {
+    id = id.trim();
+  
+    return this._HTTP.get(this._HOST + "shop/"+id).pipe(
+        //catchError(this.handleError('searchHeroes', [])) // then handle the error
+      );
+  }
+ 
 }

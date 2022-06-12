@@ -13,34 +13,61 @@ import { RecipesService } from '../recipes.service';
 export class RecipeDetailPage implements OnInit {
   loadedRecipe: Recipe;
   loadedRecipeJson: Recipejson;
+  loadedRecipeJsonE: Recipejson[] = [];
   imageBadeRef = "../";
   idJson: number;
   localisation = "../assets/icon/google-maps.png";
   defaultShopPhoto = "../assets/pictures/shopDefaultPhoto.png";
+  /**
+   * @argument : on ne charge les données que après avoir finir l'appel à la db
+   */
+  loading: boolean = false;
   constructor(private activatedRoute: ActivatedRoute,
     private recipesServices: RecipesService,
     private router: Router,
-    private alertCrtl: AlertController) { }
+    private alertCrtl: AlertController) {
+      //this.onResquestBoutigueDetail();
+     }
 
   ngOnInit() {
-    //this.recipesServices.getDataFromJSONFile();
+  
+   this.onResquestBoutigueDetail();
+  }
+
+  onResquestBoutigueDetail(){
+    
     this.activatedRoute.paramMap.subscribe(
       paramMap => {
         if (!paramMap.has('recipeId')) {
           //console.log(paramMap);
-         // console.log("Y a rien");
           return;
         }
-        //this.idJson = paramMap.get('id');
-        this.loadedRecipeJson = this.recipesServices.getRecipeFromJSON(+paramMap.get('recipeId'));
+        this.recipesServices.getOneBoutigue(paramMap.get('recipeId'))
+            .subscribe(
+              (data) => {                           //next() callback
+                this.loadedRecipeJson ={
+                  id:  data._id,
+                  shopName: data.shopName,
+                  shopImageUrl: data.shopimageUrl,
+                  shopArticleType: data.shopArticleType,
+                  shopPhoneNumber: data.shopPhoneNumber,
+                  shopHours: data.shopHours,
+                  shopContry: data.shopContry,
+                  shopCity: data.shopCity,
+                  shopMarketPlaceName: data.shopMarketPlaceName,
+                  shopArticleType1: data.shopArticleType1,
+                  shopingredients: data.shopingredients
+                }; 
+              },
+              (error) => {                             
+                console.error('Request failed with error: '+error)
+              },
+              () => { 
+                this.loading = true; 
+              })
       }
     )
-
-    // To update, run: npm uninstall -g ionic
-    //Then run: npm i -g @ionic/cli
   }
-
-
   onDeleteRecipe() {
     this.alertCrtl.create(
       {
